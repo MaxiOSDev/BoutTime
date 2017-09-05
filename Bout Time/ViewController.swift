@@ -4,7 +4,7 @@
 //
 //  Created by Max Ramirez on 9/5/17.
 //  Copyright © 2017 MaxRamirez. All rights reserved.
-//
+//  Have No Clue why my screen won't display my views within the stack view
 
 import UIKit
 
