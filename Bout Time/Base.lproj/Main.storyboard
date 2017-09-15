@@ -36,7 +36,7 @@
                                                 </constraints>
                                                 <state key="normal" image="down_full"/>
                                                 <connections>
-                                                    <action selector="moveDirection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TB1-5f-Mit"/>
+                                                    <action selector="moveTopDown:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lws-ma-Dkb"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="SjE-Do-OKI">
@@ -46,6 +46,11 @@
                                                     <constraint firstAttribute="height" constant="105" id="beg-w7-QqV"/>
                                                 </constraints>
                                                 <state key="normal" title="EventButton01"/>
+                                                <connections>
+                                                    <segue destination="Aj8-P8-cTa" kind="popoverPresentation" identifier="segue1" popoverAnchorView="SjE-Do-OKI" id="Om0-RZ-YU0">
+                                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                                    </segue>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -67,6 +72,11 @@
                                                     <constraint firstAttribute="width" constant="268" id="X5k-8i-hdr"/>
                                                 </constraints>
                                                 <state key="normal" title="EventButton02"/>
+                                                <connections>
+                                                    <segue destination="Aj8-P8-cTa" kind="popoverPresentation" identifier="segue2" popoverAnchorView="oTo-el-lFU" id="fAW-aH-o1r">
+                                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                                    </segue>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pSu-Sv-4X8">
                                                 <rect key="frame" x="276" y="0.0" width="43" height="52.5"/>
@@ -76,7 +86,7 @@
                                                 </constraints>
                                                 <state key="normal" image="up_half"/>
                                                 <connections>
-                                                    <action selector="moveDirection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cJT-AX-ssk"/>
+                                                    <action selector="moveUpperMiddleUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K58-Pj-w4s"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymP-6e-qPF">
@@ -87,7 +97,7 @@
                                                 </constraints>
                                                 <state key="normal" image="down_half"/>
                                                 <connections>
-                                                    <action selector="moveDirection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eue-Aa-Msh"/>
+                                                    <action selector="moveUpperMiddleDown:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rj0-cD-LcN"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -114,7 +124,7 @@
                                                 </constraints>
                                                 <state key="normal" image="up_half"/>
                                                 <connections>
-                                                    <action selector="moveDirection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FPE-eK-IoB"/>
+                                                    <action selector="moveLowerMiddleUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lsf-Ic-eQb"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyM-qW-gg5">
@@ -125,7 +135,7 @@
                                                 </constraints>
                                                 <state key="normal" image="down_half"/>
                                                 <connections>
-                                                    <action selector="moveDirection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Neo-5H-BiR"/>
+                                                    <action selector="moveLowerMiddleDown:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vqm-hU-t8P"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="fee-tz-Sy6">
@@ -135,6 +145,11 @@
                                                     <constraint firstAttribute="height" constant="105" id="otL-Ke-jWL"/>
                                                 </constraints>
                                                 <state key="normal" title="EventButton03"/>
+                                                <connections>
+                                                    <segue destination="Aj8-P8-cTa" kind="popoverPresentation" identifier="segue3" popoverAnchorView="fee-tz-Sy6" id="y81-3P-c6i">
+                                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                                    </segue>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -160,7 +175,7 @@
                                                 </constraints>
                                                 <state key="normal" image="up_full"/>
                                                 <connections>
-                                                    <action selector="moveDirection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s53-X8-Wqg"/>
+                                                    <action selector="moveBottomEventUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oxg-ih-czY"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ag5-hC-FKc">
@@ -170,6 +185,11 @@
                                                     <constraint firstAttribute="width" constant="268" id="fHI-nA-cSg"/>
                                                 </constraints>
                                                 <state key="normal" title="EventButton04"/>
+                                                <connections>
+                                                    <segue destination="Aj8-P8-cTa" kind="popoverPresentation" identifier="segue4" popoverAnchorView="ag5-hC-FKc" id="8gp-KZ-Jdr">
+                                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                                    </segue>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -306,7 +326,52 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-271" y="73"/>
+            <point key="canvasLocation" x="668" y="72.413793103448285"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="tdA-3e-gdD">
+            <objects>
+                <viewController id="Aj8-P8-cTa" customClass="WebViewController" customModule="Bout_Time" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GUs-11-n19"/>
+                        <viewControllerLayoutGuide type="bottom" id="aVr-2K-C0w"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="X0V-jZ-R4c">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sh3-s5-zMV">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="603" id="8Ui-T4-4XX"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="sh3-s5-zMV" secondAttribute="trailing" id="3zB-9h-4Cy"/>
+                            <constraint firstItem="sh3-s5-zMV" firstAttribute="top" secondItem="GUs-11-n19" secondAttribute="bottom" id="I83-WA-cHJ"/>
+                            <constraint firstItem="sh3-s5-zMV" firstAttribute="leading" secondItem="X0V-jZ-R4c" secondAttribute="leading" id="r5c-7H-6SZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="kBS-m6-0cp">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="stop" id="kWX-Wg-3N4">
+                            <variation key="heightClass=regular-widthClass=regular">
+                                <nil key="tintColor"/>
+                            </variation>
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="WB5-gG-cSf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="webViewContainer" destination="sh3-s5-zMV" id="QdA-UE-TKB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="apS-UK-jaB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1388" y="865"/>
         </scene>
         <!--Score View Controller-->
         <scene sceneID="X1M-1V-Cvv">
@@ -351,7 +416,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="BVc-Oe-xM6"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="yEW-pS-8i8"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -364,7 +429,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OkY-Ht-WpU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="448.80000000000001" y="71.514242878560722"/>
+            <point key="canvasLocation" x="1388" y="71.514242878560722"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="EPA-vf-uib">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cPo-7g-Fq1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="UrY-nu-iUF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Aj8-P8-cTa" kind="relationship" relationship="rootViewController" id="cVO-nb-NGk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rcD-iq-IvP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="668" y="865"/>
         </scene>
     </scenes>
     <resources>
@@ -376,4 +459,8 @@
         <image name="up_full" width="158" height="457"/>
         <image name="up_half" width="158" height="229"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="yEW-pS-8i8"/>
+        <segue reference="Om0-RZ-YU0"/>
+    </inferredMetricsTieBreakers>
 </document>

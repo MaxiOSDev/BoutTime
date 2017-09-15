@@ -15,6 +15,7 @@
 		FB328FE81F60309E0085EE8E /* EventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB328FE71F60309E0085EE8E /* EventsModel.swift */; };
 		FB328FEA1F603C540085EE8E /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB328FE91F603C540085EE8E /* ScoreViewController.swift */; };
 		FB328FEC1F603C920085EE8E /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB328FEB1F603C920085EE8E /* RoundButton.swift */; };
+		FBEF586B1F6AF8B600CEFF73 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEF586A1F6AF8B600CEFF73 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		FB328FE71F60309E0085EE8E /* EventsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsModel.swift; sourceTree = "<group>"; };
 		FB328FE91F603C540085EE8E /* ScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 		FB328FEB1F603C920085EE8E /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		FBEF586A1F6AF8B600CEFF73 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				FB328FD51F5F18190085EE8E /* AppDelegate.swift */,
 				FB328FD71F5F18190085EE8E /* ViewController.swift */,
 				FB328FE91F603C540085EE8E /* ScoreViewController.swift */,
+				FBEF586A1F6AF8B600CEFF73 /* WebViewController.swift */,
 				FB328FD91F5F18190085EE8E /* Main.storyboard */,
 				FB328FDC1F5F18190085EE8E /* Assets.xcassets */,
 				FB328FDE1F5F18190085EE8E /* LaunchScreen.storyboard */,
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB328FD81F5F18190085EE8E /* ViewController.swift in Sources */,
+				FBEF586B1F6AF8B600CEFF73 /* WebViewController.swift in Sources */,
 				FB328FEC1F603C920085EE8E /* RoundButton.swift in Sources */,
 				FB328FE81F60309E0085EE8E /* EventsModel.swift in Sources */,
 				FB328FD61F5F18190085EE8E /* AppDelegate.swift in Sources */,
@@ -314,6 +318,7 @@
 				FB328FE61F5F18190085EE8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
