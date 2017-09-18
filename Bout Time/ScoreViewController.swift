@@ -10,7 +10,7 @@ import UIKit
 
 class ScoreViewController: UIViewController {
    
-    
+    // Outlets
     @IBOutlet weak var resultsLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
 
@@ -19,12 +19,15 @@ class ScoreViewController: UIViewController {
         displayScore()
         // Do any additional setup after loading the view.
     }
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    // Function to display the score
     func displayScore() {
         if correctRounds == roundsCompleted {
             resultsLabel.text = "\(correctRounds) out of 6"

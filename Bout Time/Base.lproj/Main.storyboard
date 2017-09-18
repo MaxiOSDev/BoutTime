@@ -23,22 +23,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zij-Wc-ChJ">
-                                <rect key="frame" x="28" y="20" width="319" height="545"/>
+                                <rect key="frame" x="28" y="61" width="319" height="545"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2mK-6Y-Wik">
                                         <rect key="frame" x="0.0" y="0.0" width="319" height="105"/>
                                         <subviews>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SNd-Iu-H7f">
-                                                <rect key="frame" x="276" y="0.0" width="43" height="105"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="105" id="7bv-9v-Qb0"/>
-                                                    <constraint firstAttribute="width" constant="43" id="at0-cl-I2i"/>
-                                                </constraints>
-                                                <state key="normal" image="down_full"/>
-                                                <connections>
-                                                    <action selector="moveTopDown:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lws-ma-Dkb"/>
-                                                </connections>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="SjE-Do-OKI">
                                                 <rect key="frame" x="0.0" y="0.0" width="276" height="105"/>
                                                 <constraints>
@@ -47,9 +36,29 @@
                                                 </constraints>
                                                 <state key="normal" title="EventButton01"/>
                                                 <connections>
+                                                    <action selector="learnMore:" destination="BYZ-38-t0r" eventType="touchUpInside" id="us5-so-PxA"/>
                                                     <segue destination="Aj8-P8-cTa" kind="popoverPresentation" identifier="segue1" popoverAnchorView="SjE-Do-OKI" id="Om0-RZ-YU0">
                                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                                     </segue>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SNd-Iu-H7f" customClass="RoundButton" customModule="Bout_Time" customModuleProvider="target">
+                                                <rect key="frame" x="276" y="0.0" width="43" height="105"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="105" id="7bv-9v-Qb0"/>
+                                                    <constraint firstAttribute="width" constant="43" id="at0-cl-I2i"/>
+                                                </constraints>
+                                                <state key="normal" image="down_full"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="moveTopDown:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lws-ma-Dkb"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -61,6 +70,11 @@
                                             <constraint firstItem="SjE-Do-OKI" firstAttribute="leading" secondItem="2mK-6Y-Wik" secondAttribute="leading" id="TTV-76-OXW"/>
                                             <constraint firstAttribute="trailing" secondItem="SNd-Iu-H7f" secondAttribute="trailing" id="cp6-cQ-oHF"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zoc-Ru-W51">
                                         <rect key="frame" x="0.0" y="110" width="319" height="105"/>
@@ -73,29 +87,46 @@
                                                 </constraints>
                                                 <state key="normal" title="EventButton02"/>
                                                 <connections>
+                                                    <action selector="learnMore:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rZh-ZJ-PT5"/>
                                                     <segue destination="Aj8-P8-cTa" kind="popoverPresentation" identifier="segue2" popoverAnchorView="oTo-el-lFU" id="fAW-aH-o1r">
                                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                                     </segue>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pSu-Sv-4X8">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pSu-Sv-4X8" customClass="RoundButton" customModule="Bout_Time" customModuleProvider="target">
                                                 <rect key="frame" x="276" y="0.0" width="43" height="52.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="43" id="9Gn-tG-i6Z"/>
                                                     <constraint firstAttribute="height" constant="52.5" id="KdQ-C5-l0B"/>
                                                 </constraints>
                                                 <state key="normal" image="up_half"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="moveUpperMiddleUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K58-Pj-w4s"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymP-6e-qPF">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymP-6e-qPF" customClass="RoundButton" customModule="Bout_Time" customModuleProvider="target">
                                                 <rect key="frame" x="276" y="52" width="43" height="52.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="43" id="VLC-Qr-Zes"/>
                                                     <constraint firstAttribute="height" constant="52.5" id="x6q-xh-O7h"/>
                                                 </constraints>
                                                 <state key="normal" image="down_half"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="moveUpperMiddleDown:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rj0-cD-LcN"/>
                                                 </connections>
@@ -112,28 +143,49 @@
                                             <constraint firstItem="pSu-Sv-4X8" firstAttribute="top" secondItem="Zoc-Ru-W51" secondAttribute="top" id="frR-LQ-Kgs"/>
                                             <constraint firstItem="oTo-el-lFU" firstAttribute="top" secondItem="Zoc-Ru-W51" secondAttribute="top" id="s7e-eA-Kdg"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Z2-f0-tPd">
                                         <rect key="frame" x="0.0" y="220" width="319" height="105"/>
                                         <subviews>
-                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIr-8Q-m9k">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIr-8Q-m9k" customClass="RoundButton" customModule="Bout_Time" customModuleProvider="target">
                                                 <rect key="frame" x="276" y="0.0" width="43" height="52.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="43" id="7E0-ny-LZa"/>
                                                     <constraint firstAttribute="height" constant="52.5" id="Em2-dP-9FI"/>
                                                 </constraints>
                                                 <state key="normal" image="up_half"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="moveLowerMiddleUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lsf-Ic-eQb"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyM-qW-gg5">
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyM-qW-gg5" customClass="RoundButton" customModule="Bout_Time" customModuleProvider="target">
                                                 <rect key="frame" x="276" y="52" width="43" height="52.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="43" id="JdJ-LS-0nU"/>
                                                     <constraint firstAttribute="height" constant="52.5" id="eAH-5T-b3Z"/>
                                                 </constraints>
                                                 <state key="normal" image="down_half"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="moveLowerMiddleDown:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vqm-hU-t8P"/>
                                                 </connections>
@@ -146,6 +198,7 @@
                                                 </constraints>
                                                 <state key="normal" title="EventButton03"/>
                                                 <connections>
+                                                    <action selector="learnMore:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Tx-X4-xxJ"/>
                                                     <segue destination="Aj8-P8-cTa" kind="popoverPresentation" identifier="segue3" popoverAnchorView="fee-tz-Sy6" id="y81-3P-c6i">
                                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                                     </segue>
@@ -163,17 +216,30 @@
                                             <constraint firstItem="bIr-8Q-m9k" firstAttribute="top" secondItem="3Z2-f0-tPd" secondAttribute="top" id="tOz-dS-iG1"/>
                                             <constraint firstItem="fee-tz-Sy6" firstAttribute="leading" secondItem="3Z2-f0-tPd" secondAttribute="leading" id="uJj-EV-nW3"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p4y-BQ-bMD">
                                         <rect key="frame" x="0.0" y="330" width="319" height="105"/>
                                         <subviews>
-                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgp-GQ-V8b">
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgp-GQ-V8b" customClass="RoundButton" customModule="Bout_Time" customModuleProvider="target">
                                                 <rect key="frame" x="276" y="0.0" width="43" height="105"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="105" id="A0x-fg-3b6"/>
                                                     <constraint firstAttribute="width" constant="43" id="wKJ-xf-hgZ"/>
                                                 </constraints>
                                                 <state key="normal" image="up_full"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="moveBottomEventUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oxg-ih-czY"/>
                                                 </connections>
@@ -185,7 +251,13 @@
                                                     <constraint firstAttribute="width" constant="268" id="fHI-nA-cSg"/>
                                                 </constraints>
                                                 <state key="normal" title="EventButton04"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
+                                                    <action selector="learnMore:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iOO-Mg-q8z"/>
                                                     <segue destination="Aj8-P8-cTa" kind="popoverPresentation" identifier="segue4" popoverAnchorView="ag5-hC-FKc" id="8gp-KZ-Jdr">
                                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                                     </segue>
@@ -241,7 +313,7 @@
                                                             <action selector="performNextRound:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ckh-fc-TZo"/>
                                                         </connections>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xKr-bY-fVD">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1:00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xKr-bY-fVD">
                                                         <rect key="frame" x="42" y="0.0" width="234" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="4h5-Ba-8sz"/>
@@ -270,7 +342,7 @@
                                                             <constraint firstAttribute="width" constant="303" id="3Xg-Qv-OMP"/>
                                                             <constraint firstAttribute="height" constant="30" id="hto-vZ-ENx"/>
                                                         </constraints>
-                                                        <state key="normal" title="Shake to complete"/>
+                                                        <state key="normal" title="Shake to check answer"/>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -301,9 +373,9 @@
                         </subviews>
                         <color key="backgroundColor" red="0.03911440446972847" green="0.16247186064720154" blue="0.29465252161026001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="zij-Wc-ChJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="3Od-xD-1u5"/>
+                            <constraint firstItem="zij-Wc-ChJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="41" id="3Od-xD-1u5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zij-Wc-ChJ" secondAttribute="trailing" constant="12" id="M3h-v0-kz9"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="zij-Wc-ChJ" secondAttribute="bottom" constant="102" id="Yzt-dA-aO9"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="zij-Wc-ChJ" secondAttribute="bottom" constant="61" id="Yzt-dA-aO9"/>
                             <constraint firstItem="zij-Wc-ChJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="12" id="k4G-KG-RUl"/>
                         </constraints>
                     </view>
@@ -315,6 +387,7 @@
                         <outlet property="event02" destination="oTo-el-lFU" id="En4-lL-tm8"/>
                         <outlet property="event03" destination="fee-tz-Sy6" id="6iq-uS-D3y"/>
                         <outlet property="event04" destination="ag5-hC-FKc" id="wp8-7K-5vh"/>
+                        <outlet property="learnMore" destination="rmn-dn-N4b" id="3Zv-d5-RLu"/>
                         <outlet property="nextRoundFailure" destination="ehx-aK-TeW" id="xrz-Fn-DdG"/>
                         <outlet property="nextRoundSuccess" destination="MHz-Ar-tZa" id="tIH-px-Hgl"/>
                         <outlet property="timerLabel" destination="xKr-bY-fVD" id="spS-Yd-zmS"/>
@@ -344,34 +417,39 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="603" id="8Ui-T4-4XX"/>
+                                    <constraint firstAttribute="height" constant="603" id="RZd-eX-nUS"/>
                                 </constraints>
                             </view>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sIf-Tk-RBV">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem id="GxS-ef-fmL">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="stop" id="FpJ-2h-S0P">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <segue destination="BYZ-38-t0r" kind="presentation" id="pHk-Fl-dUN"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="sh3-s5-zMV" secondAttribute="trailing" id="3zB-9h-4Cy"/>
-                            <constraint firstItem="sh3-s5-zMV" firstAttribute="top" secondItem="GUs-11-n19" secondAttribute="bottom" id="I83-WA-cHJ"/>
-                            <constraint firstItem="sh3-s5-zMV" firstAttribute="leading" secondItem="X0V-jZ-R4c" secondAttribute="leading" id="r5c-7H-6SZ"/>
+                            <constraint firstAttribute="trailing" secondItem="sh3-s5-zMV" secondAttribute="trailing" id="TdP-xY-HoB"/>
+                            <constraint firstItem="aVr-2K-C0w" firstAttribute="top" secondItem="sh3-s5-zMV" secondAttribute="bottom" id="fK3-J9-bgb"/>
+                            <constraint firstItem="sh3-s5-zMV" firstAttribute="top" secondItem="GUs-11-n19" secondAttribute="bottom" constant="44" id="rQ7-tC-Shh"/>
+                            <constraint firstItem="sh3-s5-zMV" firstAttribute="leading" secondItem="X0V-jZ-R4c" secondAttribute="leading" id="xjV-su-bga"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="kBS-m6-0cp">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="stop" id="kWX-Wg-3N4">
-                            <variation key="heightClass=regular-widthClass=regular">
-                                <nil key="tintColor"/>
-                            </variation>
-                            <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="WB5-gG-cSf"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
                     <connections>
                         <outlet property="webViewContainer" destination="sh3-s5-zMV" id="QdA-UE-TKB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="apS-UK-jaB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1388" y="865"/>
+            <point key="canvasLocation" x="1388" y="1060"/>
         </scene>
         <!--Score View Controller-->
         <scene sceneID="X1M-1V-Cvv">
@@ -385,24 +463,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Score" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VcP-Vg-MmJ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Score" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VcP-Vg-MmJ">
                                 <rect key="frame" x="16" y="213" width="343" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="prP-Sb-Sqq"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Re5-TC-lUs">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Re5-TC-lUs">
                                 <rect key="frame" x="16" y="264" width="343" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="fh4-e9-PMH"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQ8-dz-J3G" customClass="RoundButton" customModule="Bout_Time" customModuleProvider="target">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQ8-dz-J3G" customClass="RoundButton" customModule="Bout_Time" customModuleProvider="target">
                                 <rect key="frame" x="109" y="347" width="155" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.23819708824157715" green="0.56060194969177246" blue="0.7060818076133728" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="LXo-PM-stD"/>
+                                </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" backgroundImage="play_again">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -421,6 +505,17 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.03911440446972847" green="0.16247186064720154" blue="0.29465252161026001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="KQ8-dz-J3G" firstAttribute="leading" secondItem="eW6-dS-f6K" secondAttribute="leadingMargin" constant="93" id="1cw-RQ-Ywq"/>
+                            <constraint firstItem="Re5-TC-lUs" firstAttribute="trailing" secondItem="eW6-dS-f6K" secondAttribute="trailingMargin" id="7cS-U5-wle"/>
+                            <constraint firstItem="KQ8-dz-J3G" firstAttribute="top" secondItem="Re5-TC-lUs" secondAttribute="bottom" constant="8" id="FHs-Dl-wfd"/>
+                            <constraint firstItem="Re5-TC-lUs" firstAttribute="top" secondItem="VcP-Vg-MmJ" secondAttribute="bottom" constant="8" id="Gz1-nH-bav"/>
+                            <constraint firstItem="Re5-TC-lUs" firstAttribute="leading" secondItem="eW6-dS-f6K" secondAttribute="leadingMargin" id="VQ4-Lv-dS1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KQ8-dz-J3G" secondAttribute="trailing" constant="95" id="XFT-Ed-cAk"/>
+                            <constraint firstItem="VcP-Vg-MmJ" firstAttribute="top" secondItem="TT4-e5-2v2" secondAttribute="bottom" constant="193" id="pzN-Of-jWC"/>
+                            <constraint firstItem="VcP-Vg-MmJ" firstAttribute="leading" secondItem="eW6-dS-f6K" secondAttribute="leadingMargin" id="qMe-yn-O9M"/>
+                            <constraint firstItem="VcP-Vg-MmJ" firstAttribute="trailing" secondItem="eW6-dS-f6K" secondAttribute="trailingMargin" id="yWZ-Oj-4wN"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="resultsLabel" destination="VcP-Vg-MmJ" id="6vE-sP-UaC"/>
@@ -430,24 +525,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OkY-Ht-WpU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1388" y="71.514242878560722"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="EPA-vf-uib">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cPo-7g-Fq1" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="UrY-nu-iUF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Aj8-P8-cTa" kind="relationship" relationship="rootViewController" id="cVO-nb-NGk"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rcD-iq-IvP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="668" y="865"/>
         </scene>
     </scenes>
     <resources>
@@ -461,6 +538,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="yEW-pS-8i8"/>
-        <segue reference="Om0-RZ-YU0"/>
+        <segue reference="y81-3P-c6i"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -15,7 +15,9 @@ var appleHistoricalEvents = newSet()
 
 class ViewController: UIViewController {
     
-
+    var displayScore = "" // to hold the place of dispalyScore
+    var link = "" // hold place of link
+    var selectedLink = "" // hold place of selectedLink
     // Timer variable
     var timer = Timer()
     var isTimerRunning = false
@@ -44,23 +46,25 @@ class ViewController: UIViewController {
     @IBOutlet weak var nextRoundSuccess: RoundButton!
     @IBOutlet weak var nextRoundFailure: RoundButton!
     
+    @IBOutlet weak var learnMore: UIButton!
     
     
     override func viewDidLoad() {
        super.viewDidLoad()
        setupGame()
         runTimer()
+        view.layer.cornerRadius = 10
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
     }
-    
+    // Hides the status bar
     override var prefersStatusBarHidden: Bool {
         return true
     }
-    
+    // The next 6 IBAction functions move the text up and down
     @IBAction func moveLowerMiddleUp(_ sender: Any) {
         //upButton02
         moveUpperMiddleDown(Any.self)
@@ -109,35 +113,30 @@ class ViewController: UIViewController {
         moveTitleOfButtons(event03, destination: event04)
     }
     
-    
-    
-    // moves my buttons text up and down, uses another helper method all the way below.
-   // @IBAction func moveDirection(_ sender: UIButton) {
-      
-       // switch sender.tag {
-       // case 1: moveTitleOfButtons(event01, destination: event02)
-        //print(event1)
-       // case 2: moveTitleOfButtons(event02, destination: event01)
-            //print(event2)
-       // case 3: moveTitleOfButtons(event02, destination: event03)
-            //print(event2)
-       // case 4: moveTitleOfButtons(event03, destination: event02)
-            //print(event3)
-       // case 5: moveTitleOfButtons(event03, destination: event04)
-            //print(event3)
-       // case 6: moveTitleOfButtons(event04, destination: event03)
-            //print(event4)
-       // default: break
-       // }
-        
-        
-    //}
+
     // simply goes to next round
     @IBAction func performNextRound(_ sender: RoundButton) {
-       // roundOfQuiz.arrayOfEvents.removeAll()
         nextRound()
         timer.invalidate()
         runTimer()
+    }
+    // Assigns the url of the data to its own button/text
+    @IBAction func learnMore(_ sender: UIButton) {
+        switch sender {
+        case event01: link = event1.url
+        selectedLink = "Learn More"
+            performSegue(withIdentifier: "segue1", sender: appleHistoricalEvents.0.url)
+        case event02: link = event2.url
+        selectedLink = "Learn More"
+            performSegue(withIdentifier: "segue2", sender: appleHistoricalEvents.1.url)
+        case event03: link = event3.url
+        selectedLink = "Learn More"
+            performSegue(withIdentifier: "segue3", sender: appleHistoricalEvents.2.url)
+        case event04: link = event4.url
+        selectedLink = "Learn More"
+            performSegue(withIdentifier: "segue4", sender: appleHistoricalEvents.3.url)
+        default: break
+        }
     }
     
     // shake gesture func
@@ -150,29 +149,25 @@ class ViewController: UIViewController {
             for button in directionButtons {
                 button?.isEnabled = false
             }
-
-       
-            roundsCompleted += 1
+            print(roundsCompleted)
+            learnMore.setTitle("Tap Event To learn more", for: .normal)
         }
         
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let websiteController = segue.destination as! WebViewController
-        if segue.identifier == "segue1" {
-            websiteController.eventLink = event1.url
-        } else if segue.identifier == "segue2" {
-            websiteController.eventLink = event2.url
-        } else if segue.identifier == "segue3" {
-            websiteController.eventLink = event3.url
-        } else if segue.identifier == "segue4" {
-            websiteController.eventLink = event4.url
+//        if selectedLink == "Game Over" {
+//            let newView = segue.destination as! ScoreViewController
+//            newView.title = displayScore
+//        } else
+            if selectedLink == "Learn More" {
+            let learnMoreView = segue.destination as! WebViewController
+            learnMoreView.link = link
         }
     }
     
-    
-    // one of the biggets headaches of my life. I always seem to get failure. Even if it is in the right order.
+    // Check Answer func to check the order of events
     func checkAnswer() {
         if appleHistoricalEvents.0.year <= appleHistoricalEvents.1.year && appleHistoricalEvents.1.year <= appleHistoricalEvents.2.year && appleHistoricalEvents.2.year <= appleHistoricalEvents.3.year {
             nextRoundSuccess.isHidden = false
@@ -188,10 +183,14 @@ class ViewController: UIViewController {
     func nextRound() {
         if roundsCompleted == roundsPerGame {
             performSegue(withIdentifier: "segue", sender: nil)
+            roundsCompleted = 0
         } else {
+            roundsCompleted += 1
             displayEvent()
+            learnMore.setTitle("Shake to check answer", for: .normal)
             resetTimer()
             timerLabel.isHidden = false
+            timerLabel.text = "1:00"
             runTimer()
             nextRoundSuccess.isHidden = true
             nextRoundFailure.isHidden = true
@@ -208,18 +207,17 @@ class ViewController: UIViewController {
         if seconds < 1 {
             timer.invalidate()
             Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(myTimerTick), userInfo: nil, repeats: false)
-        } else if seconds <= 10 {
-            seconds -= 1
-            timerLabel.text = "\(seconds)"
         } else {
             seconds -= 1
-            timerLabel.text = "\(seconds)"
+            timerLabel.text = "0:\(seconds)"
         }
         
         if seconds < 1 {
             timer.invalidate()
             timerLabel.isHidden = true
             checkAnswer()
+            roundsCompleted += 1
+            print(roundsCompleted)
         }
     }
     
@@ -233,7 +231,7 @@ class ViewController: UIViewController {
     
     func resetTimer() {
         seconds = 60
-        timerLabel.text = "\(seconds)"
+        timerLabel.text = "0:\(seconds)"
         
     }
     
@@ -262,7 +260,6 @@ class ViewController: UIViewController {
         eventsPerRound = 4
         eventsUsed = 0
         correctRounds = 0
-        indexOfSelectedEvents = 0
         seconds = 60
         displayEvent()
         //randomEvents()

@@ -9,7 +9,7 @@
 import UIKit
 @IBDesignable
 
-
+// For round corners, as I used in project 2
 class RoundButton: UIButton {
 
     @IBInspectable var cornerRadius: CGFloat = 0 {
