@@ -49,6 +49,9 @@ class WebViewController: UIViewController {
         super.didReceiveMemoryWarning()
        
     }
+    @IBAction func dismiss(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
     func loadWebPages() {
         let url1 = URL(string: appleHistoricalEvents.0.url)

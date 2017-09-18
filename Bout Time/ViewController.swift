@@ -21,7 +21,6 @@ class ViewController: UIViewController {
     // Timer variable
     var timer = Timer()
     var isTimerRunning = false
-    
 
     // variables assigned the index of events
     var event1 = appleHistoricalEvents.0
@@ -125,16 +124,16 @@ class ViewController: UIViewController {
         switch sender {
         case event01: link = event1.url
         selectedLink = "Learn More"
-            performSegue(withIdentifier: "segue1", sender: appleHistoricalEvents.0.url)
+            self.performSegue(withIdentifier: "segue1", sender: appleHistoricalEvents.0.url)
         case event02: link = event2.url
         selectedLink = "Learn More"
-            performSegue(withIdentifier: "segue2", sender: appleHistoricalEvents.1.url)
+        self.performSegue(withIdentifier: "segue2", sender: appleHistoricalEvents.1.url)
         case event03: link = event3.url
         selectedLink = "Learn More"
-            performSegue(withIdentifier: "segue3", sender: appleHistoricalEvents.2.url)
+            self.performSegue(withIdentifier: "segue3", sender: appleHistoricalEvents.2.url)
         case event04: link = event4.url
         selectedLink = "Learn More"
-            performSegue(withIdentifier: "segue4", sender: appleHistoricalEvents.3.url)
+            self.performSegue(withIdentifier: "segue4", sender: appleHistoricalEvents.3.url)
         default: break
         }
     }
@@ -145,9 +144,10 @@ class ViewController: UIViewController {
             timerLabel.isHidden = true
             timer.invalidate()
             checkAnswer()
+            enableLinkButtons()
             let directionButtons = [downButton01, downButton02, downButton03, upButton01, upButton02, upButton03]
             for button in directionButtons {
-                button?.isEnabled = false
+                button?.isUserInteractionEnabled = false
             }
             print(roundsCompleted)
             learnMore.setTitle("Tap Event To learn more", for: .normal)
@@ -157,13 +157,13 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if selectedLink == "Game Over" {
-//            let newView = segue.destination as! ScoreViewController
-//            newView.title = displayScore
-//        } else
-            if selectedLink == "Learn More" {
+        if selectedLink == "Game Over" {
+            let newView = segue.destination as! ScoreViewController
+            newView.title = displayScore
+        } else if selectedLink == "Learn More" {
             let learnMoreView = segue.destination as! WebViewController
             learnMoreView.link = link
+            print(roundsCompleted)
         }
     }
     
@@ -177,16 +177,18 @@ class ViewController: UIViewController {
         }
         
     }
-    
 
     // function to take me to next round OR to perform the segue going to the score vc
     func nextRound() {
         if roundsCompleted == roundsPerGame {
-            performSegue(withIdentifier: "segue", sender: nil)
+            selectedLink = "Game Over"
             roundsCompleted = 0
+            self.performSegue(withIdentifier: "segue", sender: nil)
+            
         } else {
             roundsCompleted += 1
             displayEvent()
+            disableLinkButtons()
             learnMore.setTitle("Shake to check answer", for: .normal)
             resetTimer()
             timerLabel.isHidden = false
@@ -251,7 +253,7 @@ class ViewController: UIViewController {
         
         let directionButtons = [downButton01, downButton02, downButton03, upButton01, upButton02, upButton03]
         for button in directionButtons {
-            button?.isEnabled = true
+            button?.isUserInteractionEnabled = true
         }
     }
     
@@ -262,7 +264,7 @@ class ViewController: UIViewController {
         correctRounds = 0
         seconds = 60
         displayEvent()
-        //randomEvents()
+        disableLinkButtons()
         nextRoundFailure.isHidden = true
         nextRoundSuccess.isHidden = true
         
@@ -277,8 +279,24 @@ class ViewController: UIViewController {
         original.setTitle(secondTitle, for: .normal)
         destination.setTitle(firstTitle, for: .normal)
     }
+    // Disable user interaction with link buttons
+    func disableLinkButtons() {
+        let eventButtons = [event01, event02, event03, event04]
+        for event in eventButtons {
+            event?.isUserInteractionEnabled = false
+        }
+    }
+    // Enavle user interaction with link buttons
+    func enableLinkButtons() {
+        let eventButtons = [event01, event02, event03, event04]
+        for event in eventButtons {
+            event?.isUserInteractionEnabled = true
+        }
+    }
 
 }
+
+
 
 
 
