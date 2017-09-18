@@ -145,10 +145,7 @@ class ViewController: UIViewController {
             timer.invalidate()
             checkAnswer()
             enableLinkButtons()
-            let directionButtons = [downButton01, downButton02, downButton03, upButton01, upButton02, upButton03]
-            for button in directionButtons {
-                button?.isUserInteractionEnabled = false
-            }
+          disableDirectionButtons()
             print(roundsCompleted)
             learnMore.setTitle("Tap Event To learn more", for: .normal)
         }
@@ -224,10 +221,7 @@ class ViewController: UIViewController {
     }
     
     func myTimerTick() {
-        let directionButtons = [downButton01, downButton02, downButton03, upButton01, upButton02, upButton03]
-        for button in directionButtons {
-            button?.isEnabled = false
-        }
+       disableDirectionButtons()
 
     }
     
@@ -251,10 +245,7 @@ class ViewController: UIViewController {
         event03.setTitle(event3.event, for: .normal)
         event04.setTitle(event4.event, for: .normal)
         
-        let directionButtons = [downButton01, downButton02, downButton03, upButton01, upButton02, upButton03]
-        for button in directionButtons {
-            button?.isUserInteractionEnabled = true
-        }
+      enableDirectionButtons()
     }
     
     // setup the game
@@ -286,11 +277,25 @@ class ViewController: UIViewController {
             event?.isUserInteractionEnabled = false
         }
     }
-    // Enavle user interaction with link buttons
+    // Enable user interaction with link buttons
     func enableLinkButtons() {
         let eventButtons = [event01, event02, event03, event04]
         for event in eventButtons {
             event?.isUserInteractionEnabled = true
+        }
+    }
+    // Enable Direction Interaction with Buttons
+    func enableDirectionButtons() {
+        let directionButtons = [downButton01, downButton02, downButton03, upButton01, upButton02, upButton03]
+        for button in directionButtons {
+            button?.isUserInteractionEnabled = true
+        }
+    }
+    // Disable Direction Interaction with Buttons
+    func disableDirectionButtons() {
+        let directionButtons = [downButton01, downButton02, downButton03, upButton01, upButton02, upButton03]
+        for button in directionButtons {
+            button?.isUserInteractionEnabled = false
         }
     }
 
