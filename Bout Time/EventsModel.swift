@@ -6,6 +6,8 @@
 //  Copyright © 2017 MaxRamirez. All rights reserved.
 //
 
+// Updated Urls. Most Don't include '#' Found there were errors for certain ones.
+
 import Foundation
 import UIKit
 import GameKit
