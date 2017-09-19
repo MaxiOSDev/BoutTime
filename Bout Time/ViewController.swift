@@ -206,18 +206,19 @@ class ViewController: UIViewController {
         if seconds < 1 {
             timer.invalidate()
             Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(myTimerTick), userInfo: nil, repeats: false)
+            timerLabel.isHidden = true
+            timer.invalidate()
+            checkAnswer()
+            enableLinkButtons()
+            disableDirectionButtons()
+            print(roundsCompleted)
+            learnMore.setTitle("Tap Event To learn more", for: .normal)
+
         } else {
             seconds -= 1
             timerLabel.text = "0:\(seconds)"
         }
         
-        if seconds < 1 {
-            timer.invalidate()
-            timerLabel.isHidden = true
-            checkAnswer()
-            roundsCompleted += 1
-            print(roundsCompleted)
-        }
     }
     
     func myTimerTick() {
